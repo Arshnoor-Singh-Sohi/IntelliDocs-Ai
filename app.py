@@ -10,11 +10,24 @@ import time
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
-from langchain.vectorstores import FAISS
-from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 import google.generativeai as genai
 from dotenv import load_dotenv
+
+# Import FAISS with fallback for different LangChain versions
+try:
+    from langchain_community.vectorstores import FAISS
+except ImportError:
+    try:
+        from langchain.vectorstores import FAISS
+    except ImportError:
+        from langchain_community.vectorstores.faiss import FAISS
+
+# Import QA chain with fallback for different LangChain versions  
+try:
+    from langchain.chains.question_answering import load_qa_chain
+except ImportError:
+    from langchain_community.chains.question_answering import load_qa_chain
 
 # Load environment variables
 load_dotenv()
@@ -36,7 +49,7 @@ else:
 
 # Page configuration
 st.set_page_config(
-    page_title="IntelliDocs AI",
+    page_title="🧠 IntelliDocs AI",
     page_icon="🧠",
     layout="wide",
     initial_sidebar_state="expanded"
