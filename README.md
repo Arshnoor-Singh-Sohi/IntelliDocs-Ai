@@ -194,7 +194,6 @@ Want to modify the code? Here's the structure:
 ## 📜 License
 
 MIT License - feel free to use, modify, and distribute!
-
 ---
 
 <div align="center">
