@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+
+# VS Code settings
+.vscode/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.noseids
+coverage.xml
+*.cover
+*.py,cover
+.cache
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variable files
+.env
+.env.*
+
+# mypy type checking
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# PyCharm
+.idea/
+
+# MacOS
+.DS_Store
